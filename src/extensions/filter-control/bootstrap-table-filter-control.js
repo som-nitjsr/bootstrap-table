@@ -115,7 +115,7 @@
 
     var setCursorPosition = function (el, index) {
         if ($.fn.bootstrapTable.utils.isIEBrowser()) {
-            if(el.setSelectionRange !== undefined) {
+            if(el.setSelectionRange !== undefined && !$(el).is('input[type="checkbox"]')) {
                 el.setSelectionRange(index, index);
             } else {
                 $(el).val(el.value);
